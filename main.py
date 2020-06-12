@@ -1,5 +1,6 @@
 from tkinter import *
 from entity import Entity
+import random
 
 if __name__ == '__main__':
 
@@ -26,11 +27,9 @@ if __name__ == '__main__':
 
 	canvas.pack(fill=BOTH, expand=0)
 
-	e1 = Entity(2, 3)
+	e1 = Entity(random.randint(0,tilesX-1), random.randint(0,tilesY-1))
 	print(e1.posX)
 	print(e1.posY)
-	e1.move(10, 10)
-	print(e1.posX)
-	print(e1.posY)
+	canvas.create_oval()
 
 	window.mainloop()
