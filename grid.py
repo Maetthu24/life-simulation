@@ -121,13 +121,13 @@ class Grid:
 	def find_empty_neighbours(self, x, y):
 		neighbours = []
 		
-		if x > 0 and self.grid_representation[x-1][y] == 0:
+		if x > 0 and self.is_empty(x-1, y):
 			neighbours.append((x-1, y))
-		if y > 0 and self.grid_representation[x][y-1] == 0:
+		if y > 0 and self.is_empty(x, y-1):
 			neighbours.append((x, y-1))
-		if x < self.tiles_x - 2 and self.grid_representation[x+1][y] == 0:
+		if x < self.tiles_x - 2 and self.is_empty(x+1, y):
 			neighbours.append((x+1, y))
-		if y < self.tiles_y - 2 and self.grid_representation[x][y+1] == 0:
+		if y < self.tiles_y - 2 and self.is_empty(x, y+1):
 			neighbours.append((x, y+1))
 
 		return neighbours
